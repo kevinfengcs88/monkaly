@@ -124,20 +124,27 @@ function createDeleteButton(toDoItem){
 inputField.addEventListener('keypress', function(e){
     if (e.key === 'Enter'){
         if (inputField.value.trim() != ''){
-            const toDoItem = document.createElement('div');
-            const toDoText = document.createElement('div');
-            createToDoText(toDoItem, toDoText, inputField.value);
-            createEditButton(toDoItem, toDoText);
-            createDeleteButton(toDoItem);
-            toDoContainer.appendChild(toDoItem);
-            saveLocalToDos(inputField.value);
-            inputField.value = '';
+            if (inputField.value.length > 80){
+                alert('Please enter an item less than 80 characters');
+                // need to add eventListener to each to-do-text
+            }
+            else{
+                const toDoItem = document.createElement('div');
+                const toDoText = document.createElement('div');
+                createToDoText(toDoItem, toDoText, inputField.value);
+                createEditButton(toDoItem, toDoText);
+                createDeleteButton(toDoItem);
+                toDoContainer.appendChild(toDoItem);
+                saveLocalToDos(inputField.value);
+                inputField.value = '';
+            }
         }
         else{
             alert('Please enter a valid value.');
         }
     }
 });
+
 inputField.addEventListener('keypress', function(e){
     if (e.key === 'Enter'){
         const toDos = document.querySelectorAll('.to-do-text');
@@ -152,7 +159,6 @@ inputField.addEventListener('keypress', function(e){
         }
     }
 });
-
 
 searchField.addEventListener('input', function(){
     const toDos = document.querySelectorAll('.to-do-text');
