@@ -1,8 +1,12 @@
 const toDoContainer = document.getElementById('to-do-container');
-const inputField = document.getElementById('add');
+const addField = document.getElementById('add');
 const searchField = document.getElementById('search');
+const addSearchSlider = document.getElementById('add-search-slider');
+const addContainer = document.getElementById('add-container');
+const searchContainer = document.getElementById('search-container');
 
 document.addEventListener('DOMContentLoaded', loadLocalStorage());
+document.addEventListener('DOMContentLoaded', hideSearchContainer());
 
 function saveLocalToDos(toDo){
     let toDos;
@@ -121,22 +125,24 @@ function createDeleteButton(toDoItem){
     });
 }
 
-inputField.addEventListener('keypress', function(e){
+addField.addEventListener('keypress', function(e){
     if (e.key === 'Enter'){
-        if (inputField.value.trim() != ''){
-            if (inputField.value.length > 80){
+        if (addField.value.trim() != ''){
+            if (addField.value.length > 80){
                 alert('Please enter an item less than 80 characters');
                 // need to add eventListener to each to-do-text
             }
+            // also need to add a check for how many items are in localStorage
+            // if there are too many, alert that the user needs to delete an item
             else{
                 const toDoItem = document.createElement('div');
                 const toDoText = document.createElement('div');
-                createToDoText(toDoItem, toDoText, inputField.value);
+                createToDoText(toDoItem, toDoText, addField.value);
                 createEditButton(toDoItem, toDoText);
                 createDeleteButton(toDoItem);
                 toDoContainer.appendChild(toDoItem);
-                saveLocalToDos(inputField.value);
-                inputField.value = '';
+                saveLocalToDos(addField.value);
+                addField.value = '';
             }
         }
         else{
@@ -145,7 +151,7 @@ inputField.addEventListener('keypress', function(e){
     }
 });
 
-inputField.addEventListener('keypress', function(e){
+addField.addEventListener('keypress', function(e){
     if (e.key === 'Enter'){
         const toDos = document.querySelectorAll('.to-do-text');
         const toDosArray = Array.from(toDos);
@@ -172,3 +178,18 @@ searchField.addEventListener('input', function(){
         }
     }
 });
+
+addSearchSlider.addEventListener('change', function(){
+    if (this.checked){   
+        searchContainer.style.display = '';
+        addContainer.style.display = 'none';     
+    }
+    else{
+        searchContainer.style.display = 'none';
+        addContainer.style.display = ''; 
+    }
+});
+
+function hideSearchContainer(){
+    searchContainer.style.display = 'none';
+}
