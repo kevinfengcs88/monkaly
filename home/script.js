@@ -60,8 +60,7 @@ function loadLocalStorage(){
         const toDoText = document.createElement('div');
         toDoItem.classList.add('to-do-item');
         toDoText.classList.add('to-do-text');
-        toDoText.innerText = toDo;
-        toDoItem.appendChild(toDoText);
+        createToDoText(toDoItem, toDoText, toDo);
         createEditButton(toDoItem, toDoText);
         createDeleteButton(toDoItem);
         toDoContainer.appendChild(toDoItem);
@@ -90,7 +89,20 @@ function createToDoText(toDoItem, toDoText, val){
     toDoText.classList.add('to-do-text');
     toDoText.innerText = val;
     toDoItem.appendChild(toDoText);
+    // toDoItem.addEventListener('keypress', function(e){
+    //     if (e.key === 'Enter'){
+    //         if (toDoText.innerText.length > 80){
+    //             alert('penoine');
+    //         }
+    //         console.log('owo');
+    //     }
+    // });
+    toDoText.addEventListener('click', function(){
+        console.log('owo');
+    });
 }
+// add character counts to each item that update live
+// should also add this to the add field
 
 function createEditButton(toDoItem, toDoText){
     const editButton = document.createElement('button');
