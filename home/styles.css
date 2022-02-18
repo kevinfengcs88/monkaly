@@ -1,4 +1,3 @@
-/* @import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css"); */
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
 *{
@@ -101,13 +100,13 @@ input:focus{
 }
 
 #to-do-container{
-  /* center container here */
+  margin: 0 auto;
   font-size: 24px;
   min-height:1px;
   padding:1.25rem;
+  width:50%;
 }
 
-/* merge these into the container? less css */
 #add, #search{
     display: inline;
     width:40vh;
@@ -148,7 +147,7 @@ input:focus{
 
 #switch-label{
   float:right;
-  padding: 0 0; 
+  padding: 1vh 0 0 0;
 }
 
 .switch {
