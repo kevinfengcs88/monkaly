@@ -121,8 +121,7 @@ input:focus{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  border-style:solid;
-  border-radius: 1vh;
+  border-radius: 2vh 0 0 2vh;
   background-color:white;
 }
 
@@ -132,17 +131,23 @@ input:focus{
 
 .to-do-text{
   text-align: right;
-  padding-right:2vh;
+  padding: 1vh;
   color:#000;
 }
 
-.edit-button{
+.edit-button, .delete-button{
   cursor:pointer;
+  background-color:white;
+  border:none;
+  padding:1rem;
+}
+
+.edit-button{
+  background-color:green;
 }
 
 .delete-button{
-  cursor:pointer;
-  margin-right: 1vh;
+  background-color: red;
 }
 
 #switch-container{
