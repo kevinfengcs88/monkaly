@@ -106,7 +106,7 @@ function createToDoText(toDoItem, toDoText, val){
 
 function createEditButton(toDoItem, toDoText){
     const editButton = document.createElement('button');
-    editButton.innerHTML = '<i class="fas fa-edit"></i>';
+    editButton.innerHTML = '<i class="fas fa-edit" style="color:white"></i>';
     editButton.classList.add('edit-button');
     toDoItem.appendChild(editButton);
     editButton.addEventListener('click', function(){
@@ -128,7 +128,7 @@ function createEditButton(toDoItem, toDoText){
 
 function createDeleteButton(toDoItem){
     const deleteButton = document.createElement('button'); 
-    deleteButton.innerHTML = '<i class="fa fa-trash" style="color:red;"aria-hidden="true"></i>';
+    deleteButton.innerHTML = '<i class="fas fa-trash" style="color:white" aria-hidden="true"></i>';
     deleteButton.classList.add('delete-button');
     toDoItem.appendChild(deleteButton);
     deleteButton.addEventListener('click', function(){
@@ -147,6 +147,7 @@ addField.addEventListener('keypress', function(e){
             // if there are too many, alert that the user needs to delete an item
             else{
                 const toDoItem = document.createElement('div');
+                toDoItem.classList.add('fade');
                 const toDoText = document.createElement('div');
                 createToDoText(toDoItem, toDoText, addField.value);
                 createEditButton(toDoItem, toDoText);
