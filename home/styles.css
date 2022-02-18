@@ -104,7 +104,7 @@ input:focus{
   font-size: 24px;
   min-height:1px;
   padding:1.25rem;
-  width:50%;
+  width:60%;
 }
 
 #add, #search{
@@ -112,14 +112,18 @@ input:focus{
     width:40vh;
     height:4vh;
     font-family: 'Exo', sans-serif;
+    vertical-align: middle;
 }
 
 .to-do-item{
-  margin:0;
+  margin:1vh;
   font-size:25px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  border-style:solid;
+  border-radius: 1vh;
+  background-color:white;
 }
 
 .to-do-item div{
@@ -129,6 +133,7 @@ input:focus{
 .to-do-text{
   text-align: right;
   padding-right:2vh;
+  color:#000;
 }
 
 .edit-button{
@@ -137,6 +142,7 @@ input:focus{
 
 .delete-button{
   cursor:pointer;
+  margin-right: 1vh;
 }
 
 #switch-container{
@@ -147,6 +153,7 @@ input:focus{
 
 #switch-label{
   float:right;
+  margin-right:2vh;
   padding: 1vh 0 0 0;
 }
 
