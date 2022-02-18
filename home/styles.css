@@ -42,8 +42,9 @@ input:focus{
 }
 
 .dropdown {
-  float: left;
+  text-align:left;
   overflow: hidden;
+  display:inline-block;
 }
 
 .dropdown .dropbtn {
@@ -139,14 +140,24 @@ input:focus{
   cursor:pointer;
 }
 
+#switch-container{
+  margin-top:2vh;
+  margin-right:2vh;
+  float:right;
+}
+
+#switch-label{
+  float:right;
+  padding: 0 0; 
+}
+
 .switch {
-    position: absolute;
-    margin-left:180vh;
-    margin-top: 2vh;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
+  position: relative;
+  float:right;
+  margin-right: 1vh;
+  width: 60px;
+  height: 34px;
+}
 
 .switch input {
   opacity: 0;
