@@ -10,32 +10,35 @@
 <body>
     <div class="context">
         <header>
-            <nav>
-                <div class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
+            <div class="dropdown">
+                <button class="dropbtn">Dropdown</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
                 </div>
-                <div id="switch-container">
-                    <label class="switch">
-                        <input type="checkbox" id="add-search-slider">
-                        <span class="slider round"></span>
-                    </label>
-                    <div id="switch-label" onselectstart="return false">Toggle filter mode</div>
-                </div>
-            </nav>
+            </div>
+            <div id="switch-container">
+                <label class="switch">
+                    <input type="checkbox" id="add-search-slider">
+                    <span class="slider round"></span>
+                </label>
+                <!--  -->
+            </div>
+            <h1 class="no-highlight" onselectstart="return false">Monkaly</h1>
         </header>
-        <h1 onselectstart="return false">Monkaly</h1>
-        <div id="add-container" onselectstart="return false">
-            Add items:
-            <input type="text" id="add">
-        </div>
-        <div id="search-container" onselectstart="return false">
-            Filter items:
-            <input type="text" id="search">
+
+        <div id="second-row">
+            <div style="opacity: 0">runescape gf</div>
+            <div id="add-container" class="no-highlight" onselectstart="return false">
+                Add items:
+                <input type="text" id="add">
+            </div>
+            <div id="search-container" class="no-highlight" onselectstart="return false">
+                Filter items:
+                <input type="text" id="search">
+            </div>
+            <div id="switch-label" class="no-highlight" onselectstart="return false">Toggle filter mode</div>
         </div>
         <div class ="card"id="to-do-container"></div>
     </div>
