@@ -67,6 +67,17 @@ function loadLocalStorage(){
     });
 }
 
+function countLocalStorage(){
+    let toDos;
+    if (localStorage.getItem('toDos') === null){
+        toDos = [];
+    }
+    else{
+        toDos = JSON.parse(localStorage.getItem('toDos'));
+    }
+    return toDos.length;
+}
+
 function placeCaretAtEnd(el) {
     if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined"){
         let range = document.createRange();
@@ -101,6 +112,7 @@ function createToDoText(toDoItem, toDoText, val){
         }
     });
 }
+
 // add character counts to each item that update live
 // should also add this to the add field
 
@@ -143,8 +155,9 @@ addField.addEventListener('keypress', function(e){
             if (addField.value.length > 49){
                 alert('Please enter an item less than 50 characters');
             }
-            // also need to add a check for how many items are in localStorage
-            // if there are too many, alert that the user needs to delete an item
+            if (countLocalStorage() == 8){
+                alert('Maximum items reached! Start completing some tasks!');
+            }
             else{
                 const toDoItem = document.createElement('div');
                 toDoItem.classList.add('fade');
