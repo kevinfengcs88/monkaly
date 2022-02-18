@@ -95,8 +95,8 @@ function createToDoText(toDoItem, toDoText, val){
     });
     toDoText.addEventListener('keypress', function(e){
         if (e.key === 'Enter'){
-            if (toDoText.innerText.length > 80 || toDoText.innerText.length == 0){
-                alert('Please enter an item less than 80 characters');
+            if (toDoText.innerText.length > 40 || toDoText.innerText.length == 0){
+                alert('Please enter an item less than 40 characters');
                 toDoText.innerText = prevText;
                 console.log(prevText);
             }
@@ -142,8 +142,8 @@ function createDeleteButton(toDoItem){
 addField.addEventListener('keypress', function(e){
     if (e.key === 'Enter'){
         if (addField.value.trim() != ''){
-            if (addField.value.length > 80){
-                alert('Please enter an item less than 80 characters');
+            if (addField.value.length > 40){
+                alert('Please enter an item less than 40 characters');
             }
             // also need to add a check for how many items are in localStorage
             // if there are too many, alert that the user needs to delete an item
