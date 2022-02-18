@@ -89,16 +89,18 @@ function createToDoText(toDoItem, toDoText, val){
     toDoText.classList.add('to-do-text');
     toDoText.innerText = val;
     toDoItem.appendChild(toDoText);
-    // toDoItem.addEventListener('keypress', function(e){
-    //     if (e.key === 'Enter'){
-    //         if (toDoText.innerText.length > 80){
-    //             alert('penoine');
-    //         }
-    //         console.log('owo');
-    //     }
-    // });
-    toDoText.addEventListener('click', function(){
-        console.log('owo');
+    let prevText = '';
+    toDoText.addEventListener('focus', function(){
+        prevText = toDoText.innerText;
+    });
+    toDoText.addEventListener('keypress', function(e){
+        if (e.key === 'Enter'){
+            if (toDoText.innerText.length > 80 || toDoText.innerText.length == 0){
+                alert('Please enter an item less than 80 characters');
+                toDoText.innerText = prevText;
+                console.log(prevText);
+            }
+        }
     });
 }
 // add character counts to each item that update live
@@ -142,7 +144,6 @@ addField.addEventListener('keypress', function(e){
         if (addField.value.trim() != ''){
             if (addField.value.length > 80){
                 alert('Please enter an item less than 80 characters');
-                // need to add eventListener to each to-do-text
             }
             // also need to add a check for how many items are in localStorage
             // if there are too many, alert that the user needs to delete an item
