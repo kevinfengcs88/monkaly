@@ -123,7 +123,7 @@ function createEditButton(toDoItem, toDoText){
     toDoText.addEventListener('blur', function(){
         toDoText.contentEditable = 'false';
         editLocalToDos(toDoItem);
-    });
+    }); // need an event listener to check if it's already contenteditable
 }
 
 function createDeleteButton(toDoItem){
