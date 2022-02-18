@@ -26,14 +26,12 @@ input:focus{
     font-size: 50px;
 }
 
-/* Navbar container */
 .navbar {
   overflow: hidden;
   background-color: #333;
   font-family: Arial;
 }
 
-/* Links inside the navbar */
 .navbar a {
   float: left;
   font-size: 16px;
@@ -43,13 +41,11 @@ input:focus{
   text-decoration: none;
 }
 
-/* The dropdown container */
 .dropdown {
   float: left;
   overflow: hidden;
 }
 
-/* Dropdown button */
 .dropdown .dropbtn {
   font-size: 16px;
   border: none;
@@ -57,16 +53,14 @@ input:focus{
   color: white;
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
+  font-family: inherit;
+  margin: 0;
 }
 
-/* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: red;
 }
 
-/* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -76,7 +70,6 @@ input:focus{
   z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
   float: none;
   color: black;
@@ -91,7 +84,6 @@ input:focus{
   background-color: #ddd;
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 } 
@@ -101,8 +93,6 @@ input:focus{
   min-height:1px;
   padding:1.25rem;
 }
-
-/* title is not centered over add and search containers */
 
 #add-container, #search-container{
     text-align: center;
@@ -202,7 +192,6 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
