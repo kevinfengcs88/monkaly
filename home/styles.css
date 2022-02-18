@@ -26,10 +26,6 @@ input:focus{
     font-size: 50px;
 }
 
-.context h2{
-  text-align: center;
-}
-
 .navbar {
   overflow: hidden;
   background-color: #333;
