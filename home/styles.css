@@ -149,10 +149,6 @@ input:focus{
   cursor:pointer;
 }
 
-.not-real-css{
-  ;
-}
-
 /* The switch - the box around the slider */
 .switch {
     position: absolute;
