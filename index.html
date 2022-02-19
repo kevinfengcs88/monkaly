@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Monkaly</title>
+</head>
+<body>
+    <div class="context">
+        <header>
+            <!-- opacity is 0 here, change later -->
+            <div class="dropdown" style="opacity:0">
+                <button class="dropbtn text-stroke">Dropdown</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+            <div id="switch-container">
+                <label class="switch">
+                    <input type="checkbox" id="add-search-slider">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <h1 class="no-highlight text-stroke" onselectstart="return false">Monkaly</h1>
+        </header>
+
+        <div id="second-row">
+            <div class ="no-highlight"style="opacity: 0">runescape gf</div>
+            <div id="add-container" class="no-highlight text-stroke" onselectstart="return false">
+                Add items:
+                <input type="text" id="add">
+            </div>
+            <div id="search-container" class="no-highlight text-stroke" onselectstart="return false">
+                Filter items:
+                <input type="text" id="search">
+            </div>
+            <div id="switch-label" class="no-highlight text-stroke" onselectstart="return false">Toggle filter mode</div>
+        </div>
+        <div class ="card"id="to-do-container"></div>
+    </div>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/aa979b5a67.js" crossorigin="anonymous"></script>
+</html>
