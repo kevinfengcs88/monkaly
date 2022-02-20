@@ -160,7 +160,7 @@ addField.addEventListener('keypress', function(e){
             if (addField.value.length > 49){
                 alert('Please enter an item less than 50 characters');
             }
-            if (countLocalStorage() == 8){
+            else if (countLocalStorage() == 8){
                 alert('Maximum items reached! Start completing some tasks!');
             }
             else{
