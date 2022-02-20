@@ -20,7 +20,7 @@ function saveLocalToDos(toDo){
     localStorage.setItem('toDos', JSON.stringify(toDos));
 }
 
-function editLocalToDos(toDo){
+function editLocalToDos(toDo, prevText){
     let toDos;
     if (localStorage.getItem('toDos') === null){
         toDos = [];
@@ -29,7 +29,7 @@ function editLocalToDos(toDo){
         toDos = JSON.parse(localStorage.getItem('toDos'));
     }
     const toDoIndex = toDo.children[0].innerText;
-    toDos.splice(toDos.indexOf(toDoIndex), 1);
+    toDos.splice(toDos.indexOf(prevText), 1);
     toDos.push(toDoIndex);
     localStorage.setItem('toDos', JSON.stringify(toDos));
 }
@@ -105,10 +105,13 @@ function createToDoText(toDoItem, toDoText, val){
         prevText = toDoText.innerText;
     });
     toDoText.addEventListener('blur', function(){
-        if (toDoText.innerText.length > 49 || toDoText.innerText.length == 0){
+        if (toDoText.innerText.length > 49){
             alert('Please enter an item less than 50 characters');
             toDoText.innerText = prevText;
-            console.log(prevText);
+        }
+        if (toDoText.innerText.length == 0){
+            alert('Please enter a valid value.');
+            toDoText.innerText = prevText;
         }
     });
 }
@@ -118,23 +121,25 @@ function createToDoText(toDoItem, toDoText, val){
 
 function createEditButton(toDoItem, toDoText){
     const editButton = document.createElement('button');
+    let prevText = '';
     editButton.innerHTML = '<i class="fas fa-edit" style="color:white"></i>';
     editButton.classList.add('edit-button');
     toDoItem.appendChild(editButton);
     editButton.addEventListener('click', function(){
         toDoText.contentEditable = 'true';
+        prevText = toDoText.innerText; //
         toDoText.focus();
         placeCaretAtEnd(toDoText);
     });
     toDoText.addEventListener('keypress', function(e){  
         if (e.key === 'Enter'){
             toDoText.contentEditable = 'false';
-            editLocalToDos(toDoItem);
+            editLocalToDos(toDoItem, prevText);
         }
     });
     toDoText.addEventListener('blur', function(){
         toDoText.contentEditable = 'false';
-        editLocalToDos(toDoItem);
+        editLocalToDos(toDoItem, prevText);
     }); // need an event listener to check if it's already contenteditable
 }
 
