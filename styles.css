@@ -156,17 +156,42 @@ input:focus{
 
 .edit-button, .delete-button{
   cursor:pointer;
-  background-color:white;
   border:none;
   padding:1rem;
 }
 
+/* .edit-button:hover{
+  background-color: green;
+}
+
+.delete-button:hover{
+  background-color: red;
+}
+
+.edit-button{
+  background-color:darkgreen;
+}
+
+.delete-button{
+  background-color: darkred;
+} */
+
+.edit-button:hover{
+  opacity: 100%;
+}
+
+.delete-button:hover{
+  opacity: 100%;
+}
+
 .edit-button{
   background-color:green;
+  opacity:75%;
 }
 
 .delete-button{
   background-color: red;
+  opacity:75%;
 }
 
 #switch-container{
