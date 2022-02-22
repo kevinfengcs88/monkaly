@@ -178,6 +178,12 @@ input:focus{
   opacity:75%;
 }
 
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
 #switch-container{
   margin-top:2vh;
   margin-right:2vh;
