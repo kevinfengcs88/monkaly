@@ -108,7 +108,6 @@ input:focus{
 
 #add-container, #search-container{
   text-align: center;
-  font-size: 24px;
   margin: 0 auto;
 }
 
@@ -131,6 +130,7 @@ input:focus{
     width:40vh;
     height:4vh;
     font-family: 'Exo', sans-serif;
+    font-size: 18px;
     vertical-align: middle;
 }
 
