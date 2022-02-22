@@ -151,7 +151,7 @@ function createDeleteButton(toDoItem){
     deleteButton.addEventListener('click', function(){
         toDoItem.classList.add('fall');
     });
-    toDoItem.addEventListener('transitionend', function(){  // sus stuff over here
+    toDoItem.addEventListener('transitionend', function(){
         toDoContainer.removeChild(toDoItem);
         removeLocalToDos(toDoItem);
         console.log('detected');
