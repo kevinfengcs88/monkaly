@@ -380,6 +380,46 @@ input:checked + .slider:before {
   }
 }
 
+@-moz-keyframes riseUp{
+  0%{
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
+  }
+  100%{
+    opacity: 100;
+  }
+}
+
+@-webkit-keyframes riseUp{
+  0%{
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
+  }
+  100%{
+    opacity: 100;
+  }
+}
+
+@-o-keyframes riseUp{
+  0%{
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
+  }
+  100%{
+    opacity: 100;
+  }
+}
+
+@-ms-keyframes riseUp{
+  0%{
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
+  }
+  100%{
+    opacity: 100;
+  }
+}
+
 .fade-in {
   animation: fadeIn ease 1s;
   -webkit-animation: fadeIn ease 1s;
