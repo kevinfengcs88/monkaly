@@ -169,7 +169,7 @@ addField.addEventListener('keypress', function(e){
             else{
                 const toDoItem = document.createElement('div');
                 const toDoText = document.createElement('div');
-                toDoItem.classList.add('fade-in');
+                toDoItem.classList.add('rise');
                 createToDoText(toDoItem, toDoText, addField.value);
                 createEditButton(toDoItem, toDoText);
                 createDeleteButton(toDoItem);

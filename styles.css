@@ -366,6 +366,20 @@ input:checked + .slider:before {
     }
 }
 
+.rise{
+  animation: riseUp ease 0.5s;
+}
+
+@keyframes riseUp{
+  0%{
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
+  }
+  100%{
+    opacity: 100;
+  }
+}
+
 .fade-in {
   animation: fadeIn ease 1s;
   -webkit-animation: fadeIn ease 1s;
