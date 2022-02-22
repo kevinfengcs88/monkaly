@@ -149,8 +149,12 @@ function createDeleteButton(toDoItem){
     deleteButton.classList.add('delete-button');
     toDoItem.appendChild(deleteButton);
     deleteButton.addEventListener('click', function(){
+        toDoItem.classList.add('fall');
+    });
+    toDoItem.addEventListener('transitionend', function(){  // sus stuff over here
         toDoContainer.removeChild(toDoItem);
         removeLocalToDos(toDoItem);
+        console.log('detected');
     });
 }
 
@@ -165,7 +169,6 @@ addField.addEventListener('keypress', function(e){
             }
             else{
                 const toDoItem = document.createElement('div');
-                toDoItem.classList.add('fade');
                 const toDoText = document.createElement('div');
                 createToDoText(toDoItem, toDoText, addField.value);
                 createEditButton(toDoItem, toDoText);
