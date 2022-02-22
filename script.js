@@ -154,7 +154,6 @@ function createDeleteButton(toDoItem){
     toDoItem.addEventListener('transitionend', function(){
         toDoContainer.removeChild(toDoItem);
         removeLocalToDos(toDoItem);
-        console.log('detected');
     });
 }
 
@@ -170,10 +169,12 @@ addField.addEventListener('keypress', function(e){
             else{
                 const toDoItem = document.createElement('div');
                 const toDoText = document.createElement('div');
+                toDoItem.classList.add('fade-in');
                 createToDoText(toDoItem, toDoText, addField.value);
                 createEditButton(toDoItem, toDoText);
                 createDeleteButton(toDoItem);
                 toDoContainer.appendChild(toDoItem);
+                
                 saveLocalToDos(addField.value);
                 addField.value = '';
             }
