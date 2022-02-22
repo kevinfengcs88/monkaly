@@ -7,6 +7,7 @@
 
 body{
     font-family: 'Exo', sans-serif;
+    overflow: hidden;
 }
 
 input:focus{
@@ -178,6 +179,7 @@ input:focus{
   opacity:75%;
 }
 
+/* bug with scroll bar with 4th item or more (scroll bar briefly pops up) */
 .fall {
   transform: translateY(10rem) rotateZ(20deg);
   opacity: 0;
