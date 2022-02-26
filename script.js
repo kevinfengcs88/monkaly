@@ -59,6 +59,7 @@ function loadLocalStorage(){
         const toDoItem = document.createElement('div');
         const toDoText = document.createElement('div');
         toDoItem.classList.add('to-do-item');
+        toDoItem.classList.add('slow-rise');
         toDoText.classList.add('to-do-text');
         createToDoText(toDoItem, toDoText, toDo);
         createEditButton(toDoItem, toDoText);
