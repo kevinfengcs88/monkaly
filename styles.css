@@ -370,6 +370,10 @@ input:checked + .slider:before {
   animation: riseUp ease 0.5s;
 }
 
+.slow-rise{
+  animation: riseUp ease 1.0s;
+}
+
 @keyframes riseUp{
   0%{
     transform: translateY(10rem) rotateZ(20deg);
