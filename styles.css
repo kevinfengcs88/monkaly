@@ -151,7 +151,7 @@ input:focus{
 
 .to-do-text{
   text-align: right;
-  padding: 1vh;
+  padding-right: 1vh;
   color:#000;
 }
 
