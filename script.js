@@ -127,8 +127,18 @@ function createEditButton(toDoItem, toDoText){
     editButton.classList.add('edit-button');
     toDoItem.appendChild(editButton);
     editButton.addEventListener('click', function(){
+        // if (toDoText.contentEditable = 'true'){
+        //     toDoText.contentEditable = 'false';
+        // }
+        // else{
+        //     console.log('this happened');
+        //     toDoText.contentEditable = 'true';
+        //     prevText = toDoText.innerText;
+        //     toDoText.focus();
+        //     placeCaretAtEnd(toDoText);
+        // }
         toDoText.contentEditable = 'true';
-        prevText = toDoText.innerText; //
+        prevText = toDoText.innerText;
         toDoText.focus();
         placeCaretAtEnd(toDoText);
     });
@@ -141,7 +151,7 @@ function createEditButton(toDoItem, toDoText){
     toDoText.addEventListener('blur', function(){
         toDoText.contentEditable = 'false';
         editLocalToDos(toDoItem, prevText);
-    }); // need an event listener to check if it's already contenteditable
+    });
 }
 
 function createDeleteButton(toDoItem){
@@ -153,7 +163,7 @@ function createDeleteButton(toDoItem){
         toDoItem.classList.add('fall');
     });
     toDoItem.addEventListener('transitionend', function(){
-        toDoContainer.removeChild(toDoItem);
+        toDoContainer.removeChild(toDoItem);    // bug here (doesn't seem to affect funtionality?)
         removeLocalToDos(toDoItem);
     });
 }
