@@ -122,10 +122,14 @@ function createToDoText(toDoItem, toDoText, val){
 
 function createEditButton(toDoItem, toDoText){
     const editButton = document.createElement('button');
+    // let editClicks = 0;
     let prevText = '';
     editButton.innerHTML = '<i class="fas fa-edit" style="color:white"></i>';
     editButton.classList.add('edit-button');
     toDoItem.appendChild(editButton);
+    // editButton.addEventListener('blur', function(){
+    //     editClicks++;
+    // });
     editButton.addEventListener('click', function(){
         // if (toDoText.contentEditable = 'true'){
         //     toDoText.contentEditable = 'false';
@@ -137,6 +141,19 @@ function createEditButton(toDoItem, toDoText){
         //     toDoText.focus();
         //     placeCaretAtEnd(toDoText);
         // }
+
+        // editClicks++;
+        // console.log(editClicks);
+        // if (editClicks % 2 != 0){
+        //     toDoText.contentEditable = 'true';
+        //     prevText = toDoText.innerText;
+        //     toDoText.focus();
+        //     placeCaretAtEnd(toDoText);
+        // }
+        // else{
+        //     toDoText.contentEditable = 'false';
+        // }
+
         toDoText.contentEditable = 'true';
         prevText = toDoText.innerText;
         toDoText.focus();
@@ -227,7 +244,7 @@ searchField.addEventListener('input', function(){
 addSearchSlider.addEventListener('change', function(){
     if (this.checked){   
         searchContainer.style.display = '';
-        addContainer.style.display = 'none';     
+        addContainer.style.display = 'none';
     }
     else{
         searchContainer.style.display = 'none';
